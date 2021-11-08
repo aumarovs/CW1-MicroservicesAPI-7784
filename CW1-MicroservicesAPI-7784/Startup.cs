@@ -1,4 +1,5 @@
 using CW1_MicroservicesAPI_7784.DBContexts;
+using CW1_MicroservicesAPI_7784.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +31,7 @@ namespace CW1_MicroservicesAPI_7784
         {
             services.AddMvc();
             services.AddDbContext<ProductContext>(o => o.UseSqlServer(Configuration.GetConnectionString("ProductDB")));
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             //services.AddControllers();
             services.AddSwaggerGen(c =>
