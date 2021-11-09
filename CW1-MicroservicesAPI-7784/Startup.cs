@@ -32,7 +32,7 @@ namespace CW1_MicroservicesAPI_7784
             services.AddMvc();
             services.AddDbContext<ProductContext>(o => o.UseSqlServer(Configuration.GetConnectionString("ProductDB")));
             services.AddTransient<IProductRepository, ProductRepository>();
-
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
             //services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,7 +50,6 @@ namespace CW1_MicroservicesAPI_7784
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CW1_MicroservicesAPI_7784 v1"));
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 

@@ -20,7 +20,7 @@ namespace CW1_MicroservicesAPI_7784
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://*:5000").UseStartup<Startup>();
                 });
     }
 }

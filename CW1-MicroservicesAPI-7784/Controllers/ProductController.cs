@@ -67,9 +67,9 @@ namespace CW1_MicroservicesAPI_7784.Controllers
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int Id)
+        public IActionResult Delete(int id)
         {
-            _productRepository.DeleteProduct(Id);
+            _productRepository.DeleteProduct(id);
             return new OkResult();
         }
     }
