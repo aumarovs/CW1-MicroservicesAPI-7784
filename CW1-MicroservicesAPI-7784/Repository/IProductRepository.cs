@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CW1_MicroservicesAPI_7784.Repository
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         void InsertProduct(Product product);
         void UpdateProduct(Product product);
